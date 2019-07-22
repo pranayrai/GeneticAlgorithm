@@ -1,57 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Ceasar Shift</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+	<title>Contact V12</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/cypher.css">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    </head>
-  <body>
-      
-    <div class="container">
-        <div class="bs-docs-section">
-          <br>
-          <br>
-          <h1 id="forms" class="page-header">Ceasar Shift</h1>
-            <form role="form" action="/" method="POST">
-              <div class="form-group">
-                <input type="textarea" class="form-control" id="inputC" name="plain_text" value="{{ data[1] }}" placeholder="Plain Text">
-                <span class="form-highlight"></span>
-                <span class="form-bar"></span>
-                <label class="float-label" for="inputC"></label>
-              </div>
-              <div class="form-group">  
-                 <input type="textarea" class="form-control" id="outputC" name="cipher_text" value="{{ data[2] }}" placeholder="Cipher Text">
-                 <span class="form-highlight"></span>
-                 <span class="form-bar"></span>
-                 <label for="outputC"></label>        
-              </div>
-                <div class="select">
-                        <div class="btn">
-                                <button type="submit" class="btn btn-primary">GO</button>
+	<div class="bg-contact100" style="background-image: url('../static/images/bg-01.jpg');">
+		<div class="container-contact100">
+			<div class="wrap-contact100">
+				<div class="contact100-pic js-tilt" data-tilt>
+					<img src="https://media.giphy.com/media/fdkbq4UIYpRMk/giphy.gif" alt="IMG">
+				</div>
+
+				<form class="contact100-form validate-form" role="form" action="/" method="POST">
+					<span class="contact100-form-title">
+						CAESAR CIPHER
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input type="text" class="input100" id="inputC" name="plain_text" value="{{ data[1] }}" placeholder="Plain Text">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-product-hunt" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input type="text" class="input100" id="outputC" name="cipher_text" value="{{ data[2] }}" placeholder="Cipher Text">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-copyright" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="select">
+					    <div class="btn">
+                                <button type="submit" class="contact100-form-btn">GO</button>
                         </div>
-                    <select name="choices">
-                        <option value="Encrypt">Encrypt</option>
-                        <option value="Crack">Crack</option>
-                    </select>
-                    <select name="key_choices">
-                    {% for i in range(data[0]) %}
-                      <option value="{{ i }}">{{ i }}</option>
-                    {% endfor %}
-                    </select>
-                </div>
-              </div>
-            </form>
-          </div>
-  </body>
+                        <select name="choices">
+                            <option value="Encrypt">Encrypt</option>
+                            <option value="Crack">Crack</option>
+                        </select>
+
+                        <select name="key_choices">
+                            {% for i in range(data[0]) %}
+                            <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+
+                    </div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--===============================================================================================-->
+	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="../static/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
 </html>
+

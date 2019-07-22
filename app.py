@@ -4,8 +4,12 @@ from genetic_algorithm import run_genetic_algorithm
 
 app = Flask(__name__)
 
+# @app.route('/')
+# def index():
+#     return render_template("index.html")
+
 @app.route('/', methods=['GET', 'POST'])
-def index():
+def caesar():
     '''
         render respective templates along with function calls for respective encryption, decryption & cracking for Caesar Cipher.
     '''
